@@ -9,8 +9,11 @@ pipeline {
         }
         stage ('build the code') {
             steps {
-                sh 'npm install'
-                sh 'npm start'
+                sh """
+                pwd
+                npm install
+                npm start
+                """
             }
         }
     }
