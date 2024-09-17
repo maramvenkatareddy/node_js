@@ -1,0 +1,26 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Installing dependencies...
+      - npm install
+  pre_build:
+    commands:
+      - echo Pre-build phase: No actions defined here.
+  build:
+    commands:
+      - echo Starting the application...
+      - npm start
+  post_build:
+    commands:
+      - echo Build and start completed on `date`
+artifacts:
+  files:
+    - '**/*'
+    - '!node_modules/**/*'
+  discard-paths: yes
+
+cache:
+  paths:
+    - 'node_modules/**/*'
